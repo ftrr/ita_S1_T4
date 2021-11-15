@@ -34,7 +34,6 @@ class Shape{
     //Atributos
     protected $amplada;
     protected $altura;
-    protected $area;
 
     //Métodos
     public function __construct($amp,$alt){
@@ -43,20 +42,20 @@ class Shape{
     }
 
     public function imprimir(){
-        echo $this -> area . "<br>";
+        echo $this -> resultat . "<br>";
     }
 
 }
 
 class Triangle extends Shape{
     public function area(){
-        $this->area = $this->amplada*$this->altura;
+        $this->resultat = ($this->amplada*$this->altura)/2;
     }
 }
 
 class Rectangle extends Shape{
     public function area(){
-        $this->area = $this->amplada*$this->altura;
+        $this->resultat = $this->amplada*$this->altura;
     }
 }
 
