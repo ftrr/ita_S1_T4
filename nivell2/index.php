@@ -4,7 +4,7 @@ echo "<br><br><b>Exercici 1</b><br>";
 
 class PokerDice {
 
-    //Properties
+    //Atributs
     private $dau = array("1"=>"As","2"=>"K","3"=>"Q","4"=>"J","5"=>"8","6"=>"7");
     public static $tirada;
 
@@ -27,15 +27,15 @@ class PokerDice {
 }
 
 
-$dau1 = new PokerDice();
-$dau1 -> shapeName();
-$dau2 = new PokerDice();
+$dau = new PokerDice();
+$dau -> shapeName();
+$dau2 = clone $dau;
 $dau2 -> shapeName();
-$dau3 = new PokerDice();
+$dau3 = clone $dau;
 $dau3 -> shapeName();
-$dau4 = new PokerDice();
+$dau4 = clone $dau;
 $dau4 -> shapeName();
-$dau5 = new PokerDice();
+$dau5 = clone $dau;
 $dau5 -> shapeName();
 
 echo PokerDice::getTotalThrows();
