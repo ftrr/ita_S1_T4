@@ -18,12 +18,14 @@ class Employee {
         echo $this->nom . ". ";
         if($this->sou>6000){
             echo "Ha de pagar impostos.";
+        }else{
+            echo "No ha de pagar impostos.";
         }
     }
 }
 
 $empleat1 = new Employee();
-$empleat1 -> initialize('Joan',30000);
+$empleat1 -> initialize('Joan',3000);
 $empleat1 -> print();
 
 

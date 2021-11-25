@@ -17,31 +17,55 @@ class Account {
         $this->saldo = $sal;
     }
 
+    public function getNumCompte(){
+        return $this->numCompte;
+    }
+
+    public function getNom(){
+        return $this->nom;
+    }
+
+    public function getCognoms(){
+        return $this->cognoms;
+    }
+
+    public function getSaldo(){
+        return $this->saldo;
+    }
+
+    public function setSaldo($saldo){
+        return $this->saldo = $saldo;
+    }
+
+    
+
     public function deposit(int $valor){
         $this->saldo = $this->saldo+$valor;
+        $this->setSaldo($this->saldo);
         echo "S'han ingressat: " . $valor . "€. <br>";
-        echo "Saldo actual: " . $this->saldo . "€. <br>";
+        echo "Saldo actual: " .$this->getSaldo() . "€. <br>";
     }
 
     public function withdraw(int $valor){
         
         if($this->saldo>=$valor){
             $this->saldo = $this->saldo-$valor;
+            $this->setSaldo($this->saldo);
             echo "S'han retirat: " . $valor . "€. <br>";
-            echo "Saldo actual: " . $this->saldo . "€. <br>";
+            echo "Saldo actual: " . $this->getSaldo() . "€. <br>";
         }else{
             echo  "No hi ha saldo suficient. <br>";
-            echo "Saldo actual: " . $this->saldo . "€. <br>";
+            echo "Saldo actual: " . $this->getSaldo() . "€. <br>";
         }
     }
 
     public function operacion(int $valor, $operacion){
         switch ($operacion){
             case 'ingressar':
-                self::deposit($valor);
+                $this->deposit($valor);
                 break;
             case 'retirar':
-                self::withdraw($valor);
+                $this->withdraw($valor);
                 break;
             default:
                 return "No s'ha pogut realitzar l'operació.";
